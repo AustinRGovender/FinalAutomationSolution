@@ -108,6 +108,7 @@
     <None Include="App.config" />
     <None Include="DataSources\Data.xlsx" />
     <None Include="DataSources\Data2.xlsx" />
+    <None Include="ExecuteAllTests.bat" />
     <None Include="license" />
     <None Include="packages.config" />
     <None Include="Runtime Bat\runTests.bat" />
