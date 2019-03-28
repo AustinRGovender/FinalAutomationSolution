@@ -1,50 +1,21 @@
-// ***********************************************************************
-// Copyright (c) 2015 Charlie Poole, Rob Prouse
-//
-// Permission is hereby granted, free of charge, to any person obtaining
-// a copy of this software and associated documentation files (the
-// "Software"), to deal in the Software without restriction, including
-// without limitation the rights to use, copy, modify, merge, publish,
-// distribute, sublicense, and/or sell copies of the Software, and to
-// permit persons to whom the Software is furnished to do so, subject to
-// the following conditions:
-// 
-// The above copyright notice and this permission notice shall be
-// included in all copies or substantial portions of the Software.
-// 
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-// LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-// OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-// WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-// ***********************************************************************
 
 using NUnitLite;
 using NUnit.Framework;
 using Interview.Test2;
 using AventStack.ExtentReports;
 using System;
+using OpenQA.Selenium;
 
 namespace NUnitLite.Tests
 {   [TestFixture]
     public class Program : BaseTest
     {
-        /// <summary>
-        /// The main program executes the tests. Output may be routed to
-        /// various locations, depending on the arguments passed.
-        /// </summary>
-        /// <remarks>Run with --help for a full list of arguments supported</remarks>
-        /// <param name="args"></param>
         public static int Main(string[] args)
         {
             return new AutoRun().Execute(args);
         }
 
-        [Test, Order(1)]
-        [Author("Austin Ryan Govender", "austinryang1@gmai.com")]
-        [Description("This test is to simulate Logging in to the application via via credentials parsed in Excel Data Source")]
+        [Test, Order(1)]       
         public void tc1VerifyLoginProcedurePositeTest()
         {
             try
@@ -90,22 +61,47 @@ namespace NUnitLite.Tests
         }
 
         [Test, Order(3)]
-        public void tc3ValidateButtonProperties()
+        public void tc3ValidateButtonDisplayedTrue()
         {
+            try
+            {
+                test = extent.CreateTest("tc3ValidateButtonProperties").Info("tc3ValidateButtonProperties Started");
+                PropCollection.driver.FindElement(By.Id("bSubmit"));
+                test.Log(Status.Info, "Successfully Found Button");
+            }
+            catch (Exception e)
+            {
+                test.Log(Status.Fail, e.ToString());
+                throw;
+            }
+        }
 
+        [Test, Order(4)]
+        public void tc4ValidateButtonDisplayedFalse()
+        {
+            try
+            {
+                test = extent.CreateTest("tc4ValidateButtonDisplayedFalse").Info("tc4ValidateButtonDisplayedFalse Started");
+                PropCollection.driver.FindElement(By.Id("btnSubmit"));
+                test.Log(Status.Info, "Successfully Found Button");
+            }
+            catch (Exception e)
+            {
+                test.Log(Status.Fail, e.ToString());
+                throw;
+            }
         }
 
         [Test, Order(4)]
         public void tc4ValidateHyperLinkNavigation()
         {
-            test = extent.CreateTest("tc1VerifyLoginProcedurePositeTest").Info("tc1VerifyLoginProcedurePositeTest Started");
+            test = extent.CreateTest("tc4ValidateHyperLinkNavigation").Info("tc4ValidateHyperLinkNavigation Started");
             try
-            {
-                test = extent.CreateTest("tc1VerifyLoginProcedurePositeTest").Info("tc1VerifyLoginProcedurePositeTest Started");
+            {                
                 LoginPageObject loginObject = new LoginPageObject();
                 loginObject.VerifyHyperLinkGithub();
-                test.Log(Status.Info, "Successfully Logged In with DS Data");
-                test.Log(Status.Pass, "tc1VerifyLoginProcedurePositeTest Passed");
+                test.Log(Status.Info, "Successfully Navigated to HyperLink");
+                test.Log(Status.Pass, "tc4ValidateHyperLinkNavigation Passed");
             }
             catch (Exception e)
             {
