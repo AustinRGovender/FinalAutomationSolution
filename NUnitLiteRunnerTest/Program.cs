@@ -15,8 +15,9 @@ namespace NUnitLite.Tests
         }
 
         [Test, Order(1)]
-        public void tc1ValidateUrl()
+        public void tc1ValidateUrlAgainstDataSource()
         {
+            test = extent.CreateTest("tc1ValidateUrlAgainstDataSource").Info("tc1ValidateUrlAgainstDataSource Started");
             string currentUrl = null;
             string expectedUrl = null;
             currentUrl = PropCollection.driver.Url;
@@ -40,11 +41,11 @@ namespace NUnitLite.Tests
     
 
         [Test, Order(2)]
-        public void tc2ValidateButtonDisplayedTrue()
+        public void tc2ValidateButtonIsDisplayedTrue()
         {
             try
             {
-                test = extent.CreateTest("tc3ValidateButtonDisplayedTrue").Info("tc3ValidateButtonDisplayedTrue Started");
+                test = extent.CreateTest("tc2ValidateIsButtonDisplayedTrue").Info("tc2ValidateButtonIsDisplayedTrue Started");
                 PropCollection.driver.FindElement(By.CssSelector("#pageContent > div > form > input[type=" 
                     + "submit" + "]:nth-child(5)"));
                 test.Log(Status.Info, "Successfully Found Button");
@@ -57,11 +58,11 @@ namespace NUnitLite.Tests
         }
 
         [Test, Order(3)]
-        public void tc3ValidateButtonDisplayedFalse()
+        public void tc3ValidateButtonIsDisplayedFalse()
         {
             try
             {
-                test = extent.CreateTest("tc5ValidateButtonDisplayedFalse").Info("tc5ValidateButtonDisplayedFalse Started");
+                test = extent.CreateTest("tc3ValidateButtonIsDisplayedFalse").Info("tc3ValidateButtonIsDisplayedFalse Started");
                 PropCollection.driver.FindElement(By.CssSelector("#pageContent > form > input[type="
                     + "submit" + "]:nth-child(7)"));
                 test.Log(Status.Info, "Successfully Found Button");
@@ -96,7 +97,7 @@ namespace NUnitLite.Tests
         {
             DataLib2.PopulateInCollection2(@"C:\Users\User\Desktop\New folder\NUnitLiteRunnerTest\NUnitLiteRunnerTest\DataSources\Data2.xlsx");
 
-            test = extent.CreateTest("tc2UpdateUserCredentialsUponLoginDDTPositiveTest").Info("tc2UpdateUserCredentialsUponLoginDDTPositiveTest Started");
+            test = extent.CreateTest("tc4UpdateUserCredentialsUponLoginDDTPositiveTest").Info("tc4UpdateUserCredentialsUponLoginDDTPositiveTest Started");
             try
             { //testing cycle --dont forget to point to ExcelDataTableCount
                 for (int i = 1; i < 6; i++)
