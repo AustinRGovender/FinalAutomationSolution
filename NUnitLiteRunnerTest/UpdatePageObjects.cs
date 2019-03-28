@@ -32,8 +32,8 @@ namespace Interview.Test2
         [FindsBy(How = How.Name, Using = "psw")]
         public IWebElement txtPassword { get; set; }
 
-        [FindsBy(How = How.CssSelector, Using = "#pageContent > div.container > form > input[type="+"submit"+"]:nth-child(11)")]
-        public IWebElement btnSubmit { get; set; }
+        [FindsBy(How = How.CssSelector, Using = "#pageContent > div > form > input[type="+"submit"+"]:nth-child(11)")]
+        public IWebElement btnUpdate { get; set; }
 
         public void UpdateDetails(string initial, string name, string surname, string email, string password)
         {
@@ -44,7 +44,7 @@ namespace Interview.Test2
             txtEmail.EnterText(email);
             Console.WriteLine("Updated Email is : " + txtEmail.GetText());
             txtPassword.EnterText(password);
-            btnSubmit.Clicks();
+            btnUpdate.Clicks();
         }
     }
 }

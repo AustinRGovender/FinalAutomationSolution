@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Interview.Test2
 {
-
+    //create driver instance + auto implemented properties
     enum PropertyType
     {
         Id,

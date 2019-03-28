@@ -13,6 +13,7 @@ namespace Interview.Test2
     {
         private static DataTable ExcelToDataTable2(string fileName2)
         {
+
             FileStream stream2 = File.Open(fileName2, FileMode.Open, FileAccess.Read);
             IExcelDataReader excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream2); 
 
@@ -27,9 +28,9 @@ namespace Interview.Test2
             DataTableCollection table2 = result.Tables;
            
             DataTable resultTable2 = table2["Sheet1"];
-
-            //Dont really need to close this stream.
+            
             stream2.Close();
+            
             return resultTable2;
         }
         static List<Datacollection> dataCol2 = new List<Datacollection>();

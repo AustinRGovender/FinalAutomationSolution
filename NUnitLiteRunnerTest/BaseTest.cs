@@ -16,6 +16,7 @@ namespace Interview.Test2
     {
         public ExtentReports extent = null;
         public ExtentTest test = null;
+        string currentUrl = null;
 
         [OneTimeSetUp]
         public void ExtentStart()
@@ -37,18 +38,20 @@ namespace Interview.Test2
             test = extent.CreateTest("InitializeEnvironmentAndDatasources").Info("Test Started");
             try
             {
-                
+    
                 DataLib.PopulateInCollection(@"C:\Users\User\Desktop\New folder\NUnitLiteRunnerTest\NUnitLiteRunnerTest\DataSources\Data.xlsx");
                 PropCollection.driver = new ChromeDriver();
                 PropCollection.driver.Manage().Window.Maximize();
                 test.Log(Status.Info,"Chrome Browser Launched Successfully");
                 PropCollection.driver.Navigate().GoToUrl("https://austinrgovender.github.io/TestSampleWeb/"); //replace with instance   
+                currentUrl = PropCollection.driver.Url;
                 test.Log(Status.Info, "Navigated to Test Website Successfully");
                 test.Log(Status.Pass, "Intitialization of Environment and Datasources Passed");
 
             }
             catch (Exception e)
             {
+                test.Log(Status.Fail, e.ToString());
                 throw;
             }
         }

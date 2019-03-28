@@ -25,7 +25,7 @@ namespace Interview.Test2
         [FindsBy(How = How.Name, Using = "psw")]
         public IWebElement txtPassword { get; set; }
         //FindByCssSelector
-        [FindsBy(How = How.CssSelector, Using = "#pageContent > div.container > form > input[type=" + "submit" + "]:nth-child(5)")]
+        [FindsBy(How = How.CssSelector, Using = "#pageContent > div > form > input[type="+"submit"+"]:nth-child(5)")]
         public IWebElement btnSubmit { get; set; }
         //FindById-Link
         [FindsBy(How = How.Id, Using = "link1")]
@@ -36,7 +36,7 @@ namespace Interview.Test2
             txtEmail.EnterText(email);
             Console.WriteLine("Email is: " + txtEmail.GetText());
             txtPassword.EnterText(password);
-            Console.WriteLine("Passwprd is: " + txtPassword.GetText());
+            Console.WriteLine("Password is: " + txtPassword.GetText());
             btnSubmit.Clicks();
 
             return new UpdatePageObjects();
@@ -47,7 +47,7 @@ namespace Interview.Test2
             txtEmailFail.EnterText(email);
             Console.WriteLine("Email is: " + txtEmail.GetText());
             txtPassword.EnterText(password);
-            Console.WriteLine("Passwprd is: " + txtPassword.GetText());
+            Console.WriteLine("Password is: " + txtPassword.GetText());
             btnSubmit.Clicks();
 
             return new UpdatePageObjects();

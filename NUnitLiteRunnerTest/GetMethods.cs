@@ -18,6 +18,7 @@ namespace Interview.Test2
         public static string getTextFromDdl(this IWebElement element)
         {
             //Create ddl on Website --DONT FORGET
+            //Not using
             return new SelectElement(element).AllSelectedOptions.SingleOrDefault().Text;
         }
 

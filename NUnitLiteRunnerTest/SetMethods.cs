@@ -25,6 +25,7 @@ namespace Interview.Test2
         }
 
         //Selecting a ddl
+        //Not using
         public static void SelectDropdown(this IWebElement element, string value)
         {
                 new SelectElement(element).SelectByText(value);
