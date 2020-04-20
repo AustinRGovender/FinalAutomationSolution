@@ -93,16 +93,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseTest.cs" />
-    <Compile Include="DataLib.cs" />
-    <Compile Include="DataLib2.cs" />
-    <Compile Include="GetMethods.cs" />
-    <Compile Include="LoginPageObject.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="PropCollection.cs" />
+    <Compile Include="SetupServices\BaseTest.cs" />
+    <Compile Include="PageServices\DataLib.cs" />
+    <Compile Include="PageServices\DataLib2.cs" />
+    <Compile Include="PageServices\GetMethods.cs" />
+    <Compile Include="PageObjects\LoginPageObject.cs" />
+    <Compile Include="Runtime\Program.cs" />
+    <Compile Include="PageObjects\PropCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SetMethods.cs" />
-    <Compile Include="UpdatePageObjects.cs" />
+    <Compile Include="PageServices\SetMethods.cs" />
+    <Compile Include="PageObjects\UpdatePageObjects.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -111,7 +111,7 @@
     <None Include="ExecuteAllTests.bat" />
     <None Include="license" />
     <None Include="packages.config" />
-    <None Include="Runtime Bat\runTests.bat" />
+    <None Include="Runtime\runTests.bat" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="extent-config.xml" />
@@ -125,7 +125,7 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\NUnit.3.11.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.11.0\build\NUnit.props'))" />
-    <Error Condition="!Exists('..\packages\Selenium.Chrome.WebDriver.2.45\build\Selenium.Chrome.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.Chrome.WebDriver.2.45\build\Selenium.Chrome.WebDriver.targets'))" />
+    <Error Condition="!Exists('..\packages\Selenium.Chrome.WebDriver.81.0.0\build\Selenium.Chrome.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.Chrome.WebDriver.81.0.0\build\Selenium.Chrome.WebDriver.targets'))" />
   </Target>
-  <Import Project="..\packages\Selenium.Chrome.WebDriver.2.45\build\Selenium.Chrome.WebDriver.targets" Condition="Exists('..\packages\Selenium.Chrome.WebDriver.2.45\build\Selenium.Chrome.WebDriver.targets')" />
+  <Import Project="..\packages\Selenium.Chrome.WebDriver.81.0.0\build\Selenium.Chrome.WebDriver.targets" Condition="Exists('..\packages\Selenium.Chrome.WebDriver.81.0.0\build\Selenium.Chrome.WebDriver.targets')" />
 </Project>
