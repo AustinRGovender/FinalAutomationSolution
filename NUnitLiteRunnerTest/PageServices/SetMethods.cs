@@ -10,18 +10,19 @@ namespace Interview.Test2
 {
     public static class SetMethods
     {
-
+        
         //Enter Text
         public static void EnterText(this IWebElement element, string value)
         {
             element.SendKeys(value);
-            //no more stronglytyped variables
         }
 
         //Click Button Operation
         public static void Clicks(this IWebElement element)
         {
+            PropCollection prop = new PropCollection();
             element.Click();
+            prop.captureScreenshot();
         }
 
         //Selecting a ddl

@@ -38,7 +38,6 @@ namespace Interview.Test2
             test = extent.CreateTest("InitializeEnvironmentAndDatasources").Info("Test Started");
             try
             {
-    
                 DataLib.PopulateInCollection(@"DataSources\Data.xlsx");
                 PropCollection.driver = new ChromeDriver();
                 PropCollection.driver.Manage().Window.Maximize();
@@ -47,7 +46,6 @@ namespace Interview.Test2
                 currentUrl = PropCollection.driver.Url;
                 test.Log(Status.Info, "Navigated to Test Website Successfully");
                 test.Log(Status.Pass, "Intitialization of Environment and Datasources Passed");
-
             }
             catch (Exception e)
             {

@@ -38,7 +38,6 @@ namespace NUnitLite.Tests
                 throw;
             }
         }
-    
 
         [Test, Order(2)]
         public void tc2ValidateButtonIsDisplayedTrue()
@@ -90,7 +89,7 @@ namespace NUnitLite.Tests
                     " With Password: " + DataLib2.ReadData2(i, "Password"));
                     test.Log(Status.Pass, "Login Passed for Line: " + i + " from Datasource");
                     pageObj.UpdateDetails(DataLib2.ReadData2(i, "Initial"), DataLib2.ReadData2(i, "Name"),
-                        DataLib2.ReadData2(i, "Surname"),
+                    DataLib2.ReadData2(i, "Surname"),
                     DataLib2.ReadData2(i, "UpdateEmail"), DataLib2.ReadData2(i, "UpdatePassword"));
                     test.Log(Status.Info, "Update Passed. \n" + " Initials: " + DataLib2.ReadData2(i, "Initial") +
                     " With Name: " + DataLib2.ReadData2(i, "Name") +
@@ -104,7 +103,5 @@ namespace NUnitLite.Tests
                 throw;
             }
         }
-
-
     }
 }

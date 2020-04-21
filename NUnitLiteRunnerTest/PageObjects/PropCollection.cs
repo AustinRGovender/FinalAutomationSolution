@@ -20,5 +20,18 @@ namespace Interview.Test2
     {
         //Auto-Implemented Properties
         public static IWebDriver driver { get; set; }
+
+        public void captureScreenshot()
+        {
+            Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
+            string screenshot = ss.AsBase64EncodedString;
+            byte[] screenshotAsByteArray = ss.AsByteArray;
+            ss.SaveAsFile(@"C:\Users\User\Desktop\iLab Automation\iLabAutomationProject\iLabAutomationProject\TestResults" + "Step" + GetTimestamp(DateTime.Now) + ".jpeg", OpenQA.Selenium.ScreenshotImageFormat.Jpeg);
+        }
+        public static String GetTimestamp(DateTime value)
+        {
+            return value.ToString("yyyyMMddHHmmssffff");
+        }
+
     }
 }

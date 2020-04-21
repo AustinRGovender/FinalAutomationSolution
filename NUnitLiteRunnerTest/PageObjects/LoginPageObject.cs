@@ -52,10 +52,5 @@ namespace Interview.Test2
 
             return new UpdatePageObjects();
         }
-
-        //public void VerifyHyperLinkGithub()
-        //{
-        //    hLink.Clicks();
-        //}
     }
 }
